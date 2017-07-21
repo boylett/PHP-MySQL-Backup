@@ -1,5 +1,5 @@
 # MySQL Dump
-Nice and easy to use, this function creates an `sql` file containing a complete MySQL dump for the supplied database credentials.
+Nice and easy to use, this function creates an sql file containing a complete MySQL dump for the supplied database credentials.
 
 ### Usage
 The following will create a dump at `backups/dump.sql`. If the database cannot be accessed, a `PDOException` will be thrown.
@@ -14,7 +14,7 @@ mysql_dump('backups/users.sql', 'localhost', 'test-database', 'username', 'passw
 ```
 
 ### Checking for Success
-The function spits out the filename of the SQL file, meaning it is as simple as this to check for a successful dump:
+The function spits out the full filename of the sql file, meaning it is as simple as this to check for a successful dump:
 ```php
 if(file_exists(mysql_dump('backups/dump.sql', 'localhost', 'test-database', 'username', 'password')))
 {
