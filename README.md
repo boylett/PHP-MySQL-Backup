@@ -2,7 +2,7 @@
 Nice and easy to use, this function creates an `sql` file containing a complete MySQL dump for the supplied database credentials.
 
 ### Usage
-The following will create a dump at `backups/dump.sql`. If the database cannot be accessed, a PDOException will be thrown.
+The following will create a dump at `backups/dump.sql`. If the database cannot be accessed, a `PDOException` will be thrown.
 ```php
 mysql_dump('backups/dump.sql', 'localhost', 'test-database', 'username', 'password');
 ```
