@@ -13,7 +13,7 @@ To specify which tables to export, supply them as an array of strings as the fin
 mysql_dump('backups/users.sql', 'localhost', 'test-database', 'username', 'password', array('users'));
 ```
 
-### Checking for Success
+### Checking Your Dump
 The function spits out the full filename of the sql file, meaning it is as simple as this to check for a successful dump:
 ```php
 if(file_exists(mysql_dump('backups/dump.sql', 'localhost', 'test-database', 'username', 'password')))
