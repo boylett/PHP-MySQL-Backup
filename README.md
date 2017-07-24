@@ -27,13 +27,14 @@ else
 ```
 
 ### Arguments
-|Argument|Description|
-|---|---|
-|`$filename`|The full path to the destination sql file|
-|`$host`|The MySQL database host|
-|`$database`|The name of the MySQL database to import to|
-|`$username`|The database login username|
-|`$password`|The database login password|
+|Argument||Description|
+|---|---|---|
+|`$filename` (str)|Required|The full path to the destination sql file|
+|`$host` (str)| Required |The MySQL database host|
+|`$database` (str)| Required |The name of the MySQL database to import to|
+|`$username` (str)| Required |The database login username|
+|`$password` (str)| Required |The database login password|
+|`$tables` (array)|*Optional*|A list of table names to export - exports all tables if left blank|
 
 &nbsp;
 
@@ -50,10 +51,10 @@ mysql_import('database-file.sql', 'localhost', 'test-database', 'username', 'pas
 `mysql_import` will return `true` if the import was successful, or `false` if the sql file supplied does not exist, was not readable or was empty, or if a query in the file throws a `PDOException`.
 
 ### Arguments
-|Argument|Description|
-|---|---|
-|`$filename`|The full path to the target sql file|
-|`$host`|The MySQL database host|
-|`$database`|The name of the MySQL database to import to|
-|`$username`|The database login username|
-|`$password`|The database login password|
+|Argument||Description|
+|---|---|---|
+|`$filename` (str)|Required|The full path to the target sql file|
+|`$host` (str)| Required |The MySQL database host|
+|`$database` (str)| Required |The name of the MySQL database to import to|
+|`$username` (str)| Required |The database login username|
+|`$password` (str)| Required |The database login password|
