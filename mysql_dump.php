@@ -2,11 +2,14 @@
 
 	/**
 	 * Dumps a MySQL database to an SQL file
-	 * 1.0.1  |  2017-07-21  |  Ryan Boylett <boylett.uk>
+	 * 1.0.2  |  2017-07-21  |  Ryan Boylett <boylett.uk>
 	 */
 
 	function mysql_dump($filename = 'dump.sql', $host = 'localhost', $database = 'test', $username = 'root', $password = 'root', $tables = array())
 	{
+		ini_set('memory_limit', '5120M');
+		set_time_limit(0);
+
 		$chunk_size = 200;
 
 		$out = fopen($filename, 'w');
@@ -92,7 +95,15 @@
 							fwrite($out, ',');
 						}
 
-						fwrite($out, "'" . str_replace("\n", "\\n", addslashes($value)) . "'");
+						fwrite($out, "'" . preg_replace(array
+						(
+							"/(\r\n|\r|\n)/",
+							"/\t/"
+						), array
+						(
+							"\\n",
+							"\\t"
+						), addslashes($value)) . "'");
 
 						$c ++;
 					}
