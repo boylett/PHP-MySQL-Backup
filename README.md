@@ -25,3 +25,14 @@ else
     echo "I'm gonna need some prunes.";
 }
 ```
+
+&nbsp;
+
+# MySQL Import
+This function imports an SQL file into a database using the supplied credentials.
+
+### Usage
+Assume we have an sql file laying around that we'd like to turn into a functioning database. We have MySQL and PHP installed, now what? Well, my friend, it's as easy as this:
+```php
+mysql_import('database-file.sql', 'localhost', 'test-database', 'username', 'password');
+```
